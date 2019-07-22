@@ -18,7 +18,7 @@ class CustomTitle extends StatelessWidget {
                     : Colors.white,
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
-                fontFamily: "Playfair"
+                fontFamily: "Rubik"
               ),
             ),
             IconButton(
