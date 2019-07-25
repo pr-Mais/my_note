@@ -14,15 +14,9 @@ void main() async {
   runApp(MyApp(brightness));
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   final Brightness brightness;
   MyApp(this.brightness);
-
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new DynamicTheme(
