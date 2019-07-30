@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:date_format/date_format.dart';
-
 import '../screens/newNote.dart';
 import '../components/noteItem.dart';
 import '../services/database.dart';
@@ -15,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
   changeBrightness() {
     DynamicTheme.of(context).setBrightness(
         Theme.of(context).brightness == Brightness.dark
@@ -50,9 +47,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onTap: () {
                         NotesDatabaseService().deleteNoteInDB(note);
-                        setState(() {
-                          _scaffoldKey = _scaffoldKey;
-                        });
+                        setState(() {});
                         Navigator.of(context).pop();
                       },
                     ),
@@ -75,9 +70,7 @@ class _HomePageState extends State<HomePage> {
                     child: Text("Delete"),
                     onPressed: () {
                       NotesDatabaseService().deleteNoteInDB(note);
-                      setState(() {
-                        _scaffoldKey = _scaffoldKey;
-                      });
+                      setState(() {});
                       Navigator.of(context).pop();
                     },
                     isDestructiveAction: true,
@@ -96,7 +89,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       appBar: PreferredSize(
         child: AppBar(
           backgroundColor: Theme.of(context).canvasColor,
@@ -123,40 +115,6 @@ class _HomePageState extends State<HomePage> {
                     child: CustomTitle(changeBrightness),
                     padding: EdgeInsets.only(bottom: 20),
                   ),
-                  /*Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: TextField(
-                          controller: _searchController,
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                          decoration: InputDecoration(
-                              hintStyle: TextStyle(
-                                fontSize: 18,
-                              ),
-                              hintText: "Search",
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(
-                                  color: Theme.of(context).primaryColor,
-                                  width: 3,
-                                ),
-                              ),
-                              prefixIcon: Padding(
-                                child: Icon(Icons.search),
-                                padding: EdgeInsets.only(left: 10, right: 10),
-                              )),
-                        ),
-                      ),
-                    ],
-                  ),*/
                 ],
               ),
             ),
@@ -218,10 +176,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         Positioned(
-            bottom: 20,
-            right: 0,
-            child: Container(
-              child: RaisedButton(
+            bottom: 30,
+            right: 30,
+            child:  RaisedButton(
                   color: Theme.of(context).brightness == Brightness.dark
                       ? Colors.tealAccent
                       : Colors.indigo,
@@ -230,12 +187,11 @@ class _HomePageState extends State<HomePage> {
                   },
                   elevation: 0.0,
                   highlightElevation: 0.0,
-                  child: Text("Add Note"),
+                  child: Text("New Note"),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0),
                   )),
-              padding: EdgeInsets.all(30),
-            ))
+            )
       ]),
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_note/screens/home.dart';
 import 'package:my_note/screens/newNote.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -24,7 +25,6 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.indigo,
               brightness: brightness,
               buttonTheme: ButtonThemeData(
-                height: 50,
                 splashColor: Colors.white60,
                 textTheme: ButtonTextTheme.primary,
               ),
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             home: HomePage(),
             routes: {
               '/home': (context) => HomePage(),
-              '/newNotePage': (context) => NewNotePage(),
+              '/newNotePage': (context) => NewNotePage()
             },
           );
         });

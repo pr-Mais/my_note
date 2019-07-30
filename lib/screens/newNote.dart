@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../models/notesModel.dart';
 import '../services/database.dart';
 
@@ -88,7 +87,7 @@ class _NewNotePageState extends State<NewNotePage> {
                   elevation: 0.0,
                   highlightElevation: 0.0,
                   onPressed: handleSave,
-                  child: isNew ? Text("Add Note") : Text("Update Note"),
+                  child: Icon(Icons.done),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.only(
                         topLeft: Radius.circular(30),
@@ -98,7 +97,7 @@ class _NewNotePageState extends State<NewNotePage> {
                 top: 8,
                 bottom: 8,
               ),
-            )
+            ),
           ],
         ),
         body: Stack(
