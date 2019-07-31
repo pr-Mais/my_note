@@ -50,17 +50,15 @@ class NoteItem extends StatelessWidget {
             Row(
               children: <Widget>[
                 Flexible(
-                  child: Container(
-                    child: Text(
+                  child:  Text(
                       title,
                       overflow: TextOverflow.ellipsis,
                       style: titleStyle,
                     ),
-                  ),
+                  
                 ),
                 Flexible(
-                  child: Container(
-                      child: Row(
+                  child: Row(
                     children: <Widget>[
                       Icon(
                         Icons.access_time,
@@ -74,7 +72,7 @@ class NoteItem extends StatelessWidget {
                       ),
                     ],
                     mainAxisAlignment: MainAxisAlignment.end,
-                  )),
+                  ),
                 )
               ],
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,13 +80,12 @@ class NoteItem extends StatelessWidget {
             Row(
               children: <Widget>[
                 Flexible(
-                  child: Container(
-                    child: Text(
+                  child: Text(
                       content,
                       overflow: TextOverflow.ellipsis,
                       style: contentStyle,
                     ),
-                  ),
+                  
                 )
               ],
             )

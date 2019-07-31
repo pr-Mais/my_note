@@ -89,21 +89,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        child: AppBar(
-          backgroundColor: Theme.of(context).canvasColor,
-          elevation: 0.0,
-          brightness: Theme.of(context).brightness == Brightness.light
-              ? Brightness.light
-              : Brightness.dark,
-        ),
-        preferredSize: Size.fromHeight(0),
-      ),
       body: Stack(children: <Widget>[
         Column(
           children: <Widget>[
             SizedBox(
-              height: 60,
+              height: MediaQuery.of(context).size.height * 0.12,
             ),
             Container(
               padding: EdgeInsets.symmetric(
@@ -176,22 +166,22 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         Positioned(
-            bottom: 30,
-            right: 30,
-            child:  RaisedButton(
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.tealAccent
-                      : Colors.indigo,
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/newNotePage');
-                  },
-                  elevation: 0.0,
-                  highlightElevation: 0.0,
-                  child: Text("New Note"),
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0),
-                  )),
-            )
+          bottom: 30,
+          right: 30,
+          child: RaisedButton(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.tealAccent
+                  : Colors.indigo,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/newNotePage');
+              },
+              elevation: 0.0,
+              highlightElevation: 0.0,
+              child: Text("New Note"),
+              shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(30.0),
+              )),
+        )
       ]),
     );
   }
