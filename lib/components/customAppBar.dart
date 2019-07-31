@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomTitle extends StatelessWidget {
+class CustomAppBar extends StatelessWidget {
   final Function onPressed;
-  CustomTitle(this.onPressed);
+  CustomAppBar(this.onPressed);
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -6,7 +6,7 @@ import 'package:date_format/date_format.dart';
 import '../screens/newNote.dart';
 import '../components/noteItem.dart';
 import '../services/database.dart';
-import '../components/customTitle.dart';
+import '../components/customAppBar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -92,21 +92,14 @@ class _HomePageState extends State<HomePage> {
       body: Stack(children: <Widget>[
         Column(
           children: <Widget>[
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.12,
-            ),
             Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 30,
+              padding: EdgeInsets.only(
+                left: 30,
+                right: 30,
+                top: MediaQuery.of(context).size.height * 0.12,
+                bottom: 20
               ),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    child: CustomTitle(changeBrightness),
-                    padding: EdgeInsets.only(bottom: 20),
-                  ),
-                ],
-              ),
+              child:  CustomAppBar(changeBrightness),
             ),
             Expanded(
                 child: StreamBuilder(

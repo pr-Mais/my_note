@@ -50,12 +50,11 @@ class NoteItem extends StatelessWidget {
             Row(
               children: <Widget>[
                 Flexible(
-                  child:  Text(
-                      title,
-                      overflow: TextOverflow.ellipsis,
-                      style: titleStyle,
-                    ),
-                  
+                  child: Text(
+                    title,
+                    overflow: TextOverflow.ellipsis,
+                    style: titleStyle,
+                  ),
                 ),
                 Flexible(
                   child: Row(
@@ -81,11 +80,10 @@ class NoteItem extends StatelessWidget {
               children: <Widget>[
                 Flexible(
                   child: Text(
-                      content,
-                      overflow: TextOverflow.ellipsis,
-                      style: contentStyle,
-                    ),
-                  
+                    content,
+                    overflow: TextOverflow.ellipsis,
+                    style: contentStyle,
+                  ),
                 )
               ],
             )
